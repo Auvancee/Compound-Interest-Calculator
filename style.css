@@ -1,19 +1,25 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f6f8;
+    background-color: #3e4446fc;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     margin: 0;
   }
+
+  form  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   
   .calculator {
     background: #fff;
-    padding: 30px;
-    border-radius: 10px;
+    padding: 10px;
+    border-radius: 3px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    width: 300px;
+    width: 400px;
     text-align: center;
   }
   
@@ -23,7 +29,7 @@ body {
   }
   
   form input, form button {
-    width: 100%;
+    width: auto;
     margin-bottom: 15px;
     padding: 10px;
     font-size: 16px;
@@ -46,5 +52,8 @@ body {
     margin-top: 20px;
     text-align: left;
     font-size: 14px;
+    background-color: rgb(87, 87, 87);
+    padding: 20px;
+    border-radius: 10px;
   }
   
