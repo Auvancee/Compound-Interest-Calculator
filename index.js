@@ -1,10 +1,12 @@
 // Compound Interest Calculator that prompts a user for some inputs
 // Finally calculates the compounded interest value
+const prompt = require('prompt-sync')()
 
-let initialAmount = 20000
-let monthlyContribution = 400
-let numberOfYears = 30
-let interestRate = 10
+// temporary data prior to prompting user
+// let initialAmount = 20000
+// let monthlyContribution = 400
+// let numberOfYears = 30
+// let interestRate = 10
 
 // [1] define function to calculate final value of compound interest
 const compoundInterest = (initialAmount, monthlyContribution, numberOfYears, interestRate) => {
@@ -21,16 +23,18 @@ const compoundInterest = (initialAmount, monthlyContribution, numberOfYears, int
 
 // calculating regular amount
 const calculateRegular = (initialAmount, monthlyContribution, numberOfYears) => {
-    return (initialAmount + monthlyContribution * 12 * numberOfYears).toFixed(2)
+    let regularValue = initialAmount + monthlyContribution * 12 * numberOfYears
+    // console.log(regularValue)
+    return regularValue.toFixed(2)
 }
 
 
 // [2] Run function that prompts user to enter all necessary details required to calculate the final amounts
 const functionRun = () =>  {
-    let initialAmount = prompt('What is your initial investment ($)? ')
-    let monthlyContribution = prompt('What is your monthly contribution ($)? ')
-    let numberOfYears = prompt('For how many years would you like to compound your investment? ')
-    let interestRate = prompt('What is your expected interest rate (%) over these years? ')
+    let initialAmount = parseInt(prompt('What is your initial investment ($)? '))
+    let monthlyContribution = parseInt(prompt('What is your monthly contribution ($)? '))
+    let numberOfYears = parseInt(prompt('For how many years would you like to compound your investment? '))
+    let interestRate = parseInt(prompt('What is your expected interest rate (%) over these years? '))
 
     printOutput(initialAmount, monthlyContribution, numberOfYears, interestRate)
 }
